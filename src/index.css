@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    
+    /* Thème Officiel CHAMASMODE : Vert Émeraude Royal & Or Impérial */
+    --color-primary: #0D281E;
+    --color-primary-hover: #163B2D;
+    --color-accent: #1C6B4D;
+    --color-accent-hover: #268C65;
+    --color-gold: #C5A059;
+    --color-bg: #F4F8F5;
+    --color-surface: #E8F1EC;
+    --color-border: #D2E2D9;
+    --color-text: #0D281E;
+    --color-muted: #5B7669;
+    --color-banner-bg: #071913;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom scrollbar for boutique drawer */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}

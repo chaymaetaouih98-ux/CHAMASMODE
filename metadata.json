@@ -1,0 +1,8 @@
+{
+  "name": "Remix CHAMASMODE | Haute Couture Marocaine \u0026 Jellabas",
+  "description": "Maison de confection artisanale et créations contemporaines de jellabas marocaines haute couture. Découvrez nos collections d\u0027exception et commande sur-mesure WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
