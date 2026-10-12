@@ -16,17 +16,38 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', variant
 
   // If user has uploaded or configured their official logo
   if (config.customLogoUrl) {
-    const heightClass =
-      size === 'sm' ? 'h-8' : size === 'lg' ? 'h-16' : 'h-11';
+    const imgSize =
+      size === 'sm'
+        ? 'w-10 h-10'
+        : size === 'lg'
+        ? 'w-20 h-20'
+        : 'w-14 h-14';
+
+    const textStyle =
+      size === 'sm'
+        ? { title: 'text-sm font-semibold tracking-wider', sub: 'text-[8.5px] tracking-widest' }
+        : size === 'lg'
+        ? { title: 'text-2xl md:text-3xl font-serif font-bold tracking-wider', sub: 'text-xs tracking-widest' }
+        : { title: 'text-lg font-serif font-semibold tracking-wider', sub: 'text-[10px] tracking-widest' };
 
     return (
-      <div className={`flex items-center gap-3 ${className}`}>
-        <img
-          src={config.customLogoUrl}
-          alt={config.brandName}
-          className={`${heightClass} w-auto object-contain`}
-          referrerPolicy="no-referrer"
-        />
+      <div className={`flex items-center gap-3 select-none ${className}`}>
+        <div className={`${imgSize} rounded-full overflow-hidden shrink-0 border border-[#C5A059]/50 bg-white p-0.5 shadow-md transition-transform duration-300 hover:scale-105`}>
+          <img
+            src={config.customLogoUrl}
+            alt={config.brandName}
+            className="w-full h-full object-contain rounded-full"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+        <div className="flex flex-col">
+          <span className={`font-serif uppercase ${textColor} ${textStyle.title} leading-none`}>
+            {config.brandName}
+          </span>
+          <span className={`font-sans uppercase ${subtitleColor} ${textStyle.sub} mt-1 font-medium`}>
+            Haute Couture · Fès
+          </span>
+        </div>
       </div>
     );
   }
@@ -90,7 +111,7 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', variant
         <span
           className={`font-sans font-medium uppercase ${subtitleColor} ${dimensions.sub} mt-1`}
         >
-          Haute Couture · Maroc
+          Haute Couture · Fès
         </span>
       </div>
     </div>

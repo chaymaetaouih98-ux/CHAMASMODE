@@ -62,9 +62,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <span className="font-serif text-lg">{product.name}</span>
         </div>
 
-        {/* Sample Badge */}
-        <div className="absolute top-3 left-3 bg-[var(--color-primary,#1E1B18)]/90 backdrop-blur-sm text-[var(--color-bg,#FAF8F5)] px-2.5 py-1 text-[11px] font-sans tracking-wider uppercase">
-          Modèle Exemple
+        {/* Prestige Badge */}
+        <div className="absolute top-3 left-3 bg-[#0D281E]/90 backdrop-blur-sm text-[#F4F8F5] px-2.5 py-1 text-[10px] font-sans tracking-widest uppercase border border-emerald-900/40">
+          Haute Couture
         </div>
 
         {/* Quick View Hover Overlay */}
@@ -89,7 +89,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <div className="flex items-center gap-2 text-xs text-[var(--color-muted,#8A7E72)] uppercase tracking-wider">
             <span>{product.categoryLabel}</span>
             <span aria-hidden="true">·</span>
-            <span>Maroc</span>
+            <span>Fès</span>
           </div>
 
           {/* Product Title */}

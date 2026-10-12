@@ -131,10 +131,10 @@ export const StoreConfigModal: React.FC = () => {
     const newId = `product-${Date.now()}`;
     const newProd: Product = {
       id: newId,
-      name: 'Nouveau Modèle Jellaba [Exemple]',
+      name: 'Nouveau Modèle Jellaba',
       category: 'haute-couture',
       categoryLabel: 'Haute Couture & Cérémonie',
-      samplePrice: 1500,
+      samplePrice: 499,
       currency: 'MAD',
       description: 'Description de la confection, broderie et tombé du tissu.',
       craftDetails: {

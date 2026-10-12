@@ -1,77 +1,27 @@
 import React, { useState } from 'react';
-import { ShoppingBag, Instagram, Sliders, Menu, X, Upload, Check } from 'lucide-react';
+import { ShoppingBag, Instagram, Menu, X } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
 import { Logo } from './Logo';
 
 export const Header: React.FC = () => {
   const {
     config,
-    updateConfig,
     cartCount,
     setIsCartOpen,
-    setIsConfigModalOpen,
   } = useStore();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [logoUploadedFeedback, setLogoUploadedFeedback] = useState(false);
-
-  // Handle direct file upload for logo
-  const handleDirectLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (loadEvent) => {
-        const result = loadEvent.target?.result as string;
-        updateConfig({ customLogoUrl: result });
-        setLogoUploadedFeedback(true);
-        setTimeout(() => setLogoUploadedFeedback(false), 3000);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
 
   return (
     <>
-      {/* Top Banner: Maison Announcement & Quick Actions */}
-      <div className="bg-[var(--color-banner-bg,#071913)] text-[var(--color-bg,#F4F8F5)] px-4 py-2 text-xs tracking-wide border-b border-emerald-950/40">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
-          {/* Maison Slogan */}
-          <div className="flex items-center gap-2 text-[11px] tracking-wider opacity-90">
-            <span className="w-2 h-2 rounded-full bg-[#C5A059] shrink-0" />
-            <span className="font-light">
-              Maison CHAMASMODE · Haute Couture Marocaine & Jellabas d’Exception · Thème Vert Émeraude Royal
-            </span>
-          </div>
-
-          {/* Direct Logo Upload Trigger & Paramètres */}
-          <div className="flex items-center gap-3 shrink-0 text-[11px]">
-            <label className="flex items-center gap-1.5 px-2.5 py-1 bg-[#C5A059] hover:brightness-110 text-[#071913] font-semibold rounded cursor-pointer transition-all">
-              {logoUploadedFeedback ? (
-                <>
-                  <Check className="w-3.5 h-3.5" />
-                  <span>Logo Enregistré !</span>
-                </>
-              ) : (
-                <>
-                  <Upload className="w-3.5 h-3.5" />
-                  <span>Importer mon Logo</span>
-                </>
-              )}
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleDirectLogoUpload}
-                className="hidden"
-              />
-            </label>
-
-            <button
-              onClick={() => setIsConfigModalOpen(true)}
-              className="flex items-center gap-1 hover:underline text-white/80 hover:text-white cursor-pointer"
-            >
-              <Sliders className="w-3 h-3 text-[#C5A059]" />
-              <span>Paramètres</span>
-            </button>
-          </div>
+      {/* Top Banner: Authentic Maison Announcement */}
+      <div className="bg-[var(--color-banner-bg,#071913)] text-[var(--color-bg,#F4F8F5)] px-4 py-2.5 text-xs tracking-wider border-b border-emerald-950/50">
+        <div className="max-w-7xl mx-auto flex items-center justify-center text-center">
+          <p className="text-[11px] sm:text-xs font-light tracking-widest uppercase flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]" />
+            <span>Maison Chama's MODE · Haute Couture & Jellabas Fès</span>
+            <span className="hidden md:inline text-white/40">|</span>
+            <span className="hidden md:inline text-[var(--color-muted)]">Livraison Partout au Maroc & International</span>
+          </p>
         </div>
       </div>
 
@@ -191,22 +141,20 @@ export const Header: React.FC = () => {
                 href={config.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-[var(--color-muted)]"
+                className="flex items-center gap-1.5 text-[var(--color-muted)] hover:text-[var(--color-accent)]"
               >
                 <Instagram className="w-4 h-4 text-[var(--color-accent)]" />
                 <span>{config.instagramHandle}</span>
               </a>
 
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  setIsConfigModalOpen(true);
-                }}
-                className="text-[var(--color-accent)] font-semibold flex items-center gap-1"
+              <a
+                href={`https://wa.me/${config.whatsAppNumber.replace(/[^0-9]/g, '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-700 font-semibold flex items-center gap-1 hover:underline"
               >
-                <Sliders className="w-3.5 h-3.5" />
-                <span>Paramètres Boutique</span>
-              </button>
+                <span>{config.whatsAppDisplay}</span>
+              </a>
             </div>
           </div>
         )}

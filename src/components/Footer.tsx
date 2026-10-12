@@ -108,7 +108,7 @@ export const Footer: React.FC = () => {
           <div className="space-y-2 text-xs text-[#A89C8F]">
             <p className="flex items-center gap-2">
               <MapPin className="w-3.5 h-3.5 text-[#C5A059] shrink-0" />
-              <span>Atelier de Confection au Maroc</span>
+              <span>Atelier de Confection à Fès</span>
             </p>
             <p className="flex items-center gap-2">
               <MessageCircle className="w-3.5 h-3.5 text-[#25D366] shrink-0" />
@@ -123,10 +123,10 @@ export const Footer: React.FC = () => {
           <div className="pt-2">
             <button
               onClick={() => setIsConfigModalOpen(true)}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#24201C] hover:bg-[#332E29] text-[#C5A059] text-xs font-medium rounded border border-[#3A342E] transition-colors cursor-pointer"
+              className="text-[11px] text-[#7A6E62] hover:text-[#C5A059] transition-colors cursor-pointer hover:underline flex items-center gap-1.5"
             >
-              <Sliders className="w-3.5 h-3.5" />
-              <span>Configurer coordonnées</span>
+              <Sliders className="w-3 h-3 text-[#C5A059]" />
+              <span>Espace Atelier (Logo & Coordonnées)</span>
             </button>
           </div>
         </div>
@@ -137,9 +137,9 @@ export const Footer: React.FC = () => {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8A7E72]">
           <p>© {new Date().getFullYear()} CHAMASMODE. Tous droits réservés.</p>
           <div className="flex items-center gap-4 text-[11px]">
-            <span>Version de prévisualisation</span>
+            <span>Confection Artisanale</span>
             <span aria-hidden="true">·</span>
-            <span>Produits d'exemple modifiables</span>
+            <span>Pièces Uniques & Sur-Mesure</span>
             <span aria-hidden="true">·</span>
             <span>Haute Couture Marocaine</span>
           </div>

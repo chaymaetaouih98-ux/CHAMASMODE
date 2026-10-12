@@ -53,7 +53,21 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [config, setConfig] = useState<StoreConfig>(() => {
     try {
       const saved = localStorage.getItem('chamasmode_config_v1');
-      if (saved) return { ...INITIAL_CONFIG, ...JSON.parse(saved), themePreset: 'royal-emerald' };
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        return {
+          ...INITIAL_CONFIG,
+          ...parsed,
+          customLogoUrl: INITIAL_CONFIG.customLogoUrl,
+          brandName: "Chama's MODE",
+          themePreset: 'royal-emerald',
+          whatsAppNumber: '212771186111',
+          whatsAppDisplay: '+212 7 71 18 61 11',
+          instagramHandle: '@chamasmode',
+          instagramUrl: 'https://www.instagram.com/chamasmode?xtok=NnRyMDU4Zmp5eWUx',
+          atelierCity: 'Fès',
+        };
+      }
     } catch {
       // ignore
     }
@@ -66,7 +80,9 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       const saved = localStorage.getItem('chamasmode_products_v1');
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          return parsed.map((p: Product) => ({ ...p, samplePrice: 499 }));
+        }
       }
     } catch {
       // ignore

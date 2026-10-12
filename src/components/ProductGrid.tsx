@@ -1,10 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import { useStore } from '../context/StoreContext';
 import { ProductCard } from './ProductCard';
-import { SlidersHorizontal } from 'lucide-react';
 
 export const ProductGrid: React.FC = () => {
-  const { products, setIsConfigModalOpen } = useStore();
+  const { products } = useStore();
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [sortBy, setSortBy] = useState<'default' | 'price-asc' | 'price-desc'>('default');
 
@@ -35,27 +34,16 @@ export const ProductGrid: React.FC = () => {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-[#E8E2D9]">
         <div>
           <div className="flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#8A6B32] font-semibold mb-2">
-            <span>Catalogue de Présentation</span>
+            <span>Collection Haute Couture</span>
             <span aria-hidden="true">·</span>
-            <span>Édition Première</span>
+            <span>Édition 2026</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#1E1B18] tracking-tight">
             Nos Modèles & Créations Jellabas
           </h2>
           <p className="mt-3 text-sm sm:text-base text-[#6B6155] max-w-2xl leading-relaxed">
-            Modèles de démonstration conçus pour prévisualiser votre boutique. Vous pourrez ajouter vos propres photos, couleurs et prix réels au fur et à mesure.
+            Chaque création est confectionnée à la main dans notre atelier par nos maîtres artisans maâlems. Tissus nobles, sfifa d'exception et finitions sur-mesure.
           </p>
-        </div>
-
-        {/* Quick config hint */}
-        <div className="shrink-0 flex items-center gap-3">
-          <button
-            onClick={() => setIsConfigModalOpen(true)}
-            className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-medium text-[#8A6B32] border border-[#D9CEBF] hover:border-[#8A6B32] hover:bg-[#F5F0E6] transition-colors cursor-pointer"
-          >
-            <SlidersHorizontal className="w-3.5 h-3.5" />
-            <span>Modifier les prix ou modèles</span>
-          </button>
         </div>
       </div>
 

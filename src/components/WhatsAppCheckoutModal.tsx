@@ -58,8 +58,8 @@ export const WhatsAppCheckoutModal: React.FC = () => {
   // Generate WhatsApp message body
   const buildWhatsAppMessage = (): string => {
     const lines: string[] = [];
-    lines.push(`✨ *COMMANDE / DEMANDE CHAMASMODE* ✨`);
-    lines.push(`Bonjour l'Atelier CHAMASMODE,`);
+    lines.push(`✨ *COMMANDE / DEMANDE CHAMA'S MODE* ✨`);
+    lines.push(`Bonjour l'Atelier Chama's MODE,`);
     lines.push(``);
     lines.push(`Je souhaite commander les pièces suivantes :`);
     lines.push(``);
@@ -130,7 +130,7 @@ export const WhatsAppCheckoutModal: React.FC = () => {
                 Finaliser sur WhatsApp
               </h2>
               <p className="text-xs text-[#C8BFB4]">
-                Échangez directement avec l'Atelier CHAMASMODE
+                Échangez directement avec l'Atelier Chama's MODE
               </p>
             </div>
           </div>

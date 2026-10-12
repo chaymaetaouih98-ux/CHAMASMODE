@@ -12,10 +12,10 @@ export const CraftsmanshipSection: React.FC = () => {
           <div className="flex items-center justify-center gap-2 text-xs tracking-[0.25em] uppercase text-[#8A6B32] font-semibold">
             <span>Héritage & Confection</span>
             <span aria-hidden="true">·</span>
-            <span>Atelier Marocain</span>
+            <span>Atelier de Fès</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#1E1B18] tracking-tight">
-            Le Savoir-Faire Artisanal de CHAMASMODE
+            Le Savoir-Faire Artisanal de Chama's MODE
           </h2>
           <p className="text-sm sm:text-base text-[#6B6155] leading-relaxed">
             Chaque jellaba est une œuvre façonnée avec patience. Nos créations perpétuent l'art noble des Maâlems marocains tout en sublimant les coupes contemporaines.
